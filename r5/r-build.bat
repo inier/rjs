@@ -1,0 +1,1 @@
+node ../tools/r.js -o baseUrl=../com/lib name=../../r5/js/index out=../r5/js/built.js optimize=none paths.jquery=empty:

@@ -1,0 +1,1 @@
+node ../tools/r.js -o baseUrl=../com/lib name=../../r4/js/index out=../r4/js/built.js excludeShallow=selector optimize=none
