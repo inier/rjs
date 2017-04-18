@@ -7,10 +7,10 @@
     },
     modules: [
         {
-            name: "../r7/home/js/index"
+            name: "../../r7/home/js/index"
         },
         {
-            name: "../r7/cacf/js/index"
+            name: "../../r7/cacf/js/index"
         }
     ]
 })

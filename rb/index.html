@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>RequireJS和Backbone集成</title>
+		<meta charset="utf-8"/>
+		<script src="require.js"></script>
+		<script>
+			require.config({
+				baseUrl: 'js',
+				shim: {
+					'backbone': {
+						deps: ['underscore'],
+						exports: 'Backbone'
+					}
+				}
+			});
+			require(['BaseRouter'], function(baseRouter) {
+			});
+		</script>
+ 	</head>
+ 	<body>
+ 	</body>
+</html>
