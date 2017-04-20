@@ -1,0 +1,55 @@
+<script type="text/x-underscore-template" id="dialog-tpl">
+    <div class="modal <%='modal-' + data.size%> fade com-dialog" id="<%= data.id%>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <%
+                        if(data.title){
+                    %>
+                    <div class="modal-title"><%=data.title%></div>
+                    <%
+                        }
+                        if(data.closeBtn){
+                    %>
+                    <div class="close">
+                        <i class="icon caec-iconfont">&#xe60b;</i>
+                    </div>
+                    <%
+                        }
+                    %>
+                </div>
+                <div class="modal-body content<%=data.icon ? ' line-height' : ''%>">
+                    <%
+                        if(data.icon){
+                    %>
+                    <img class="img-icon" src="../rock/img/<%=data.icon%>.png?ver=&" />
+                    <div class="icon-content vertical-middle-wrap">
+                        <div class="vertical-middle-body" style="font-size: 18px"><%=data.content%></div>
+                    </div>
+                    <%
+                    } else {
+                    %>
+                        <%=data.content%>
+                    <%
+                    }
+                    %>
+                </div>
+                <%
+                if(data.buttons){
+                %>
+                <div class="modal-footer dialog-btns">
+                    <%
+                    _.each(data.buttons, function(item, index){
+                    %>
+                    <button class="btn <%=item.className ? item.className : ''%>"><%=item.name%></button>
+                    <%
+                    })
+                    %>
+                </div>
+                <%
+                }
+                %>
+            </div>
+        </div>
+    </div>
+</script>

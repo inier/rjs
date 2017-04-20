@@ -1,0 +1,1 @@
+document.body.style.color="blue",document.body.style.background="gray",document.body.style.margin="100px";

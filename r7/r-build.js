@@ -1,16 +1,16 @@
 ({
     appDir: "./",
-    baseUrl: "../com/lib",
+    baseUrl: "./",
     dir: "../r7-built",
     paths: {
         jquery: 'empty:'
     },
     modules: [
         {
-            name: "../../r7/home/js/index"
+            name: "home/js/index"
         },
         {
-            name: "../../r7/cacf/js/index"
+            name: "cacf/js/index"
         }
     ]
 })

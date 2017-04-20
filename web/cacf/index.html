@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>长安商城</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="长安商城为您提供安全交易保障服务，让你全面安心享受网上购物乐趣！">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keyword" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="stylesheet" href="../rock/com/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../rock/css/common.css?ver=20170412091648">
+        <link rel="stylesheet" href="../rock/css/_site-nav.css?ver=20170412091648">
+        <!-- 引入flexslider CSS -->
+    <link rel="stylesheet" href="../rock/com/jquery-FlexSlider/flexslider.css?ver=20170412091648" type="text/css">
+    <link rel="stylesheet" href="index.css?ver=20170412091648">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="../rock/com/html5shim/html5.js"></script>
+    <script src="../rock/com/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- 内容区域 -->
+	<div class="x-container main-page" id="xContainer">
+    <div class="details-header">
+        <div class="con-wrap clearfix">
+            <div class="nav-main">
+                <a class="menu-hd nav-home" href="../home/index.html" target="_blank">
+                    <i class="nav-top-ion caec-iconfont">&#xe638;</i>
+                    <span>商城首页</span>
+                </a>
+            </div>
+            <ul class="nav-main" id="js-detailsNav">
+
+                                            <li class="menu active car-header nav-flag" data-href="#modelType" id="carModelType">
+                    <div class="menu-hd">
+                        <span class="menu-hd-link">幸运抽奖</span>
+                    </div>
+                </li>
+                
+                
+                                <li class="menu  unavailable">
+                    <div class="menu-hd">
+                        <span class="menu-hd-link">支付</span>
+                    </div>
+                </li>
+                            </ul>
+            <ul class="user-opt">
+                <li class="user-login">
+                    <div class="menu">
+                        <div class="menu-hd">
+                            <a href="../login/login.html" target="_self">登录</a>
+                        </div>
+                    </div>
+                    <div class="u-split">|</div>
+                    <div class="menu">
+                        <div class="menu-hd">
+                            <a href="../login/regist.html" target="_self">注册</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu menu-shopping-num black-nav-cart">
+                    <div class="menu-hd js-menu-href js-cart-href">
+                        <a   target="_blank">
+                            <i class="nav-top-ion caec-iconfont">&#xe626;</i>
+                             <span class="menu-cart-num">(0)</span>
+                        </a>
+                    </div>
+                    <div class="menu-bd nav-shopping-cart  z-pos-right">
+                        <div class="menu-bd-panel mini-cart">
+                            <ul class="mini-cart-bd">
+
+                            </ul>
+                            <div class="mini-cart-footer">
+                                <div class="mini-cart-footer-item mini-cart-number" target="_blank" href="javascript:void(0)" title="">
+                                    <div class="mini-cart-footer-count">共<span class="mini-cart-footer-num"></span>件商品</div>
+                                    <div class="mini-cart-footer-pricew">¥<span class="mini-cart-footer-price"></span>
+                                    </div>
+                                </div>
+                                <a class="mini-cart-footer-item" href="../cart/index.html" target="_blank" title="">
+                                    <div class="mini-cart-go btn btn-reverse">查看我的购物车</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu hovered-nobg" style="display: none">
+                    <div class="menu-hd js-menu-href js-message-href">
+                        <a   target="_blank">
+                            <i class="nav-top-ion caec-iconfont">&#xe63e;</i>
+                            <span class="menu-message-num">(0)</span>
+                        </a>
+                    </div>
+                </li>
+                <!-- <li class="menu hovered-nobg">
+                    <div class="menu-hd">
+                        <a target="_blank" href="javascript:" title="我要分享">
+                            <i class="nav-top-ion caec-iconfont">&#xe625;</i>
+                            <span class="menu-shares-txt">分享</span>
+                        </a>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="details-container">
+    	<div class='main-page'>
+                <!-- 内容区域 -->
+        <div id="cacf">
+
+
+<textarea style="display: none" class="data">
+[
+    {
+        "goodsId":"19026",
+        "price":0.10,
+        "second860":"third1853",
+        "second859":"third1848"
+    },
+    {
+        "goodsId":"19029",
+        "price":0.20,
+        "second860":"third1853",
+        "second859":"third1849"
+    },
+    {
+        "goodsId":"19033",
+        "price":0.30,
+        "second859":"third1850",
+        "second860":"third1854"
+    },
+    {
+        "goodsId":"19034",
+        "price":0.40,
+        "second859":"third1850",
+        "second860":"third1855"
+    }
+]
+</textarea>
+<textarea style="display: none" class="dataName">
+    {
+        "second859":"人次",
+        "second860":"赠品"
+    }
+</textarea>
+
+    <!--页面上半部分的产品展示及配置选择区域-->
+    <div class="parts-exhibition con-wrap container-fluid col-padding-0">
+        <!--产品图片展示区-->
+        <div class="parts-show col-md-14 col-ms-14 col-xs-14 col-padding-0">
+            <!--产品展示区的大图显示区-->
+            <div class="detail-img">
+                <div class="detail-img-content">
+                    <img src="_mock/car1.jpg" alt=""/>
+                </div>
+            </div>
+            <!--产品展示区图片选择的区域-->
+            <div class="choose-img">
+                <div class="last">
+                    <div class="img sprite-last"></div>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-content">
+                        <div class="choose-img-little view show-active show-slide" data-img="img/car1.jpg"><img
+                          src="_mock/thumbnail1.jpg" alt=""/></div>
+                        <div class="choose-img-little view" data-img="img/car2.jpg"><img src="_mock/thumbnail2.jpg" alt=""/></div>
+                        <div class="choose-img-little view" data-img="img/car3.jpg"><img src="_mock/thumbnail3.jpg" alt=""/></div>
+                        <div class="choose-img-little view" data-img="img/car4.jpg"><img src="_mock/thumbnail4.jpg" alt=""/></div>
+                        <div class="choose-img-little view" data-img="img/car5.jpg"><img src="_mock/thumbnail5.jpg" alt=""/></div>
+                        <div class="choose-img-little" data-img="img/car1.jpg"><img src="_mock/thumbnail1.jpg" alt=""/> </div>
+                        <div class="choose-img-little" data-img="img/car3.jpg"><img src="_mock/thumbnail3.jpg" alt=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="next">
+                    <div class="img sprite-next"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="parts-price col-md-10 col-ms-10 col-xs-10 col-padding-0">
+            <!--标题及提示展示区域-->
+            <div class="parts-name">长安-CS75</div>
+            <div class="little-word">满总需人数，即抽取一人获得该奖品，未满额自动返回全款，每个用户一个活动限参与一次。</span></div>
+            <div class="little-word">
+                抢购时间：<span class="red-word">2017-03-17 16:53:15~2017-03-17 16:53:15</span>
+            </div>
+            <div class="little-word">
+                开奖时间：<span class="red-word">2017-03-17 16:53:15</span>。
+            </div>
+
+            <div class="loading show"></div>
+            <div class="activity hide">
+                <!--众筹信息展示区域-->
+                <div class="cf-content">
+                    <div class="flag">
+                        <div class="sprite-luck_flag"></div>
+                    </div>
+                    <div class="leave-time-show">
+                        <i class="nav-top-ion caec-iconfont">&#xe655;</i>
+                        <span class="time-describe">距离结束时间：</span>
+                        <span class="leave-time"></span></div>
+                    <div class="tips">
+                        <div>参与进度</div>
+                        <div class="tip">每满总需人次，即抽取幸运用户获得该商品</div>
+                    </div>
+                    <div class="cf-speed">
+                        <div class="progress">
+                            <div class="progress-bar">
+                                <img src="img/progress1.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="progress-speed"></div>
+                    </div>
+                    <div class="cf-pro container-fluid col-padding-0">
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0">已参与 <span class='personCount'></span>
+                        </div>
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0 all">总需人次 <span class='personCount'></span>
+                        </div>
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0 residue">剩余人次 <span class='personCount'></span></div>
+                    </div>
+                </div>
+                <!--产品价格-->
+                <div class="price">
+                    <div class="sprite-price-bg">
+                        <div class="price-content">
+                            <div class="price-list">
+                                <div class="little-word price-type">价格</div>
+                                <span class="sign">￥</span><span class="put-price">350</span><span class="original-price">￥600.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 规格属性 -->
+                <div class="choose">
+                    <div class="little-word option-type">人次:</div>
+                    <!--选择产品型号的按钮区-->
+                    <div class="all-option">
+                        <div class="option" data-value="third1848" data-key="second859">1</div>
+                        <div class="option" data-value="third1849" data-key="second859">10</div>
+                        <div class="option" data-value="third1850" data-key="second859">95</div>
+                    </div>
+                </div>
+                <div class="choose">
+                    <div class="little-word option-type">赠品:</div>
+                    <!--选择产品型号的按钮区-->
+                    <div class="all-option">
+                        <div class="option" data-value="third1853" data-key="second860">无</div>
+                        <div class="option" data-value="third1854" data-key="second860">100元CS95车款抵扣券</div>
+                        <div class="option" data-value="third1855" data-key="second860">100元长安商城通用券</div>
+                    </div>
+                </div>
+                <div class="choose-count col-md-24 col-ms-24 col-xs-24 col-padding-0">
+                    <!--<div class="inventory inventory1">库存<span class="inventory-count">0</span>个</div>-->
+                    <div class="count-down-block"></div>
+                    <div class="count-down">
+                        <div class="count-down-line"></div>
+                        <div class="count-down-content"><span class="count-down-type"></span><span
+                          class="count-down-time"></span></div>
+                    </div>
+                    <div class="all-btn">
+                        <a href="javascript:void(0);" class="buy-now btn btn-lg btn-buy disabled">立即购买</a>
+                    </div>
+                </div>
+            </div>
+            <div class="activity-writing hide">
+                <div class="message">
+                    <div class="message-header">
+                        <div class="sprite-message-header"></div>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-describe">活动成功，距揭晓还剩</div>
+                        <div class="message-info">
+                            <div class="sprite-clock"></div>
+                            <div class="info"></div>
+                        </div>
+                        <div class="lucky-user">
+                            <div class="lucky-user-img">
+                                <img src="_mock/bird.png" alt="">
+                            </div>
+                            <div class="lucky-user-info">
+                                <div class="left">用户昵称：<span class="info"></span></div>
+                                <div class="right">揭晓时间：<span class="info"></span></div>
+                                <div class="left">本期参与：<span class="info"></span></div>
+                                <div class="right">购买时间：<span class="info"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cacf-rule">
+                    <div>
+                        <p>计算规则：</p>
+                        <p class="rule-content"></p>
+                    </div>
+                    <a class="link-my-record" href="../person-center/entrance.html#order-manage">
+                        查看我的参与记录 >
+                    </a>
+                </div>
+            </div>
+            <div class="activity-die hide">
+                <div class="cf-content">
+                    <div class="flag">
+                        <div class="sprite-die_luck_flag"></div>
+                    </div>
+                    <div class="leave-time-show">
+                        <i class="nav-top-ion caec-iconfont">&#xe655;</i>
+                        <span class="time-describe">距离结束时间：</span>
+                        <span class="leave-time"></span></div>
+                    <div class="tips">
+                        <div>参与进度</div>
+                        <div class="tip">每满总需人次，即抽取1人获得该商品</div>
+                    </div>
+                    <div class="cf-speed">
+                        <div class="progress">
+                            <div class="progress-bar">
+                                <div class="sprite-progress-gray-static"></div>
+                            </div>
+                        </div>
+                        <div class="progress-speed"></div>
+                    </div>
+                    <div class="cf-pro container-fluid col-padding-0">
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0">已参与 <span class='personCount'></span>
+                        </div>
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0 all">总需人次 <span class='personCount'></span>
+                        </div>
+                        <div class="col-md-8 col-ms-8 col-xs-8 col-padding-0 residue">剩余人次 <span
+                          class='personCount'></span></div>
+                    </div>
+                </div>
+                <div class="die-info">
+                    <div class="sprite-die"></div>
+                    <div class="die-tip">
+                        <div><span></span>的众筹已经失败</div>
+                        <div>我们会尽快为您退款，请耐心等待</div>
+                    </div>
+                </div>
+                <div class="all-btn">
+                    <a href="javascript:void(0);" class="btn btn-lg btn-buy disabled">立即购买</a>
+                </div>
+            </div>
+            <div class="unable-buy hide">
+                <div class="sprite-die"></div>
+                <div class="good-state-tip">
+                    商品已下架
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--页面中的导航条（商品参数等）-->
+    <div class="content-nav" id="content-nav">
+        <div class="con-wrap">
+            <div class="parts-detail" data-nav="true">活动详情</div>
+            <span></span>
+            <div class="parts-evaluation" data-nav="true">参与记录</div>
+            <div class="download">
+                <div class="download-mobile">
+                    <a href="https://mall.changan.com.cn/ca-web/APP/download/index.html" target="_blank">
+                        <span>手机购买</span>
+                        <div class="qr-code-icon sprite-erweima"></div>
+                        <i class="nav-top-ion caec-iconfont">&#xe62c;</i>
+                    </a>
+                </div>
+                <div class="download-erweima">
+                    <a class="menu-bd-panel" href="https://mall.changan.com.cn/ca-web/APP/download/index.html"
+                       target="_blank">
+                        <!--<img src="../rock/img/qrcode-app-caec.jpg?ver=20170412091648" width="121">-->
+                        <div id="code"></div>
+                        <div class="menu-bd-txt">扫描二维码浏览移动端商城</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blank"></div>
+
+    <div class="content-back-color">
+        <div class="con-wrap">
+
+            <!--详情图片区域-->
+            <div class="detail mb30">
+                <div class="detail-content">
+                    <img src="_mock/car-detail1.jpg" alt=""/>
+                    <img src="_mock/car-detail2.jpg" alt=""/>
+                    <img src="_mock/car-detail3.jpg" alt=""/>
+                </div>
+            </div>
+
+            <!--商品评论区域-->
+            <div class="evaluation">
+                <!--<a name="parts-evaluation" href=""></a>-->
+                <div class="evaluation-title">
+                    <span>参与记录</span>
+                </div>
+                <!--评论区域-->
+                <div class="evaluation-content con-wrap">
+                    <div class="container-fluid header-content"></div>
+
+                    <div class="user-info-container"></div>
+
+                    <div class="page-container">
+                        <div id="car-comment-paging" class="pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="recommend"></div>
+        </div>
+    </div>
+
+    <script id="user-detail-template" type="text/x-underscore-template">
+        <%
+        var luckyCount = 0;
+        if(data.luckyNumber && data.luckyNumber.length != 0){
+        luckyCount = data.luckyNumber.length
+        }
+        %>
+        <div class="user-detail" id="cacfUserLuckyNum">
+            <div class="user-message">
+                <img class="user-img" src="<%=data.img %>" alt="">
+                <span class="user-name"><%=data.userName %></span>
+                <span class="gray-word">本次参与<span class="red-word"><%=data.partedNum %></span>人次</span>
+                <i class="nav-top-ion caec-iconfont close">&#xe60b;</i>
+            </div>
+            <div class="user-lucky-num" data-id="<%=data.orderId%>">
+                <div class="user-lucky-num-list">
+                    <%
+                    for(var i = 0; i < luckyCount; i++){
+                        if(data.luckyNumber[i].length < 7){
+                    %>
+                            <span><%=data.luckyNumber[i] %></span>
+                    <%
+                        }else{
+                    %>
+                            <span class="long-lucky-num"><%=data.luckyNumber[i] %></span>
+                    <%
+                        }
+                    }
+                    %>
+                </div>
+            </div>
+            <div class="arrow-detail">
+                <div class="sprite-arrow"></div>
+            </div>
+        </div>
+    </script>
+
+    <script id="user-info-header-template" type="text/x-underscore-template">
+        <div class="header">
+            <div class="col-md-5 col-ms-5 col-xs-5 col-padding-0 pl-70">时间</div>
+            <div class="col-md-5 col-ms-5 col-xs-5 col-padding-0 pl-50">会员</div>
+            <div class="col-md-4 col-ms-4 col-xs-4 col-padding-0">参与人次</div>
+            <div class="col-md-7 col-ms-7 col-xs-7 col-padding-0 pl-90">IP</div>
+            <div class="col-md-3 col-ms-3 col-xs-3 col-padding-0 pl-40">来源</div>
+        </div>
+    </script>
+
+    <script id="user-info-template" type="text/x-underscore-template">
+        <%
+            var fromType,fromTypeLogo;
+            switch(data.from){
+                case '0':
+                    fromType = "电脑PC端";
+                    fromTypeLogo = '&#xe6e8;';
+                    break;
+                case '1':
+                    fromType = "手机APP端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                case '5':
+                    fromType = "微信端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                case '6':
+                    fromType = "移动网页端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                case '7':
+                    fromType = "移动网页端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                case '8':
+                    fromType = "移动网页端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                case '9':
+                    fromType = "移动网页端";
+                    fromTypeLogo = '&#xe6ea;';
+                    break;
+                default:
+                    fromType = "来自其他";
+                    fromTypeLogo = '&#xe6e8;';
+                    break;
+            }
+        %>
+        <div class="container-fluid user-info">
+            <div class="col-md-5 col-ms-5 col-xs-5 col-padding-0 time"><%=data.time %></div>
+            <div class="col-md-5 col-ms-5 col-xs-5 col-padding-0">
+                <img class="user-img" src="<%=img %>" alt="">
+                <%=data.nickname %>
+            </div>
+            <div class="col-md-4 col-ms-4 col-xs-4 col-padding-0 has-opportunity">
+                <%=data.partedNum %>
+                <span class="see-detail" data-id="<%=data.memberId %>">查看众筹码</span>
+            </div>
+            <div class="col-md-7 col-ms-7 col-xs-7 col-padding-0"><%=data.ip %></div>
+            <div class="col-md-3 col-ms-3 col-xs-3 col-padding-0">
+                <i class="nav-top-ion caec-iconfont close"><%=fromTypeLogo %></i>
+                <%=fromType %>
+            </div>
+        </div>
+    </script>
+
+    <script id="user-noneInfo-template" type="text/x-underscore-template">
+        <div class="container-fluid none-list-item">
+            <div class="sprite-comment"></div>
+            <div>对不起，暂时没有购买纪录</div>
+        </div>
+    </script>
+</div>
+
+                </div>
+    </div>
+    <!--footer-->
+        <div class="hotpoint con-wrap">
+    <div class="container-fluid">
+        <ul class="row">
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp01"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp02"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp03"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp04"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp05"></div>
+            </li>
+        </ul>
+    </div>
+</div>    	<div class="ca-footer">
+        <!-- links -->
+                <div class="site-foot con-wrap">
+    <div class="services-tel2"></div>
+    <div class="site-link">
+        <a href="../help/help.html" target="_blank" class="site-link-item">关于商城</a>
+        <a href="../help/help.html?ca=law" target="_blank" class="site-link-item">法律声明</a>
+        <a href="../help/help.html?ca=buy" target="_blank" class="site-link-item">选购流程</a>
+        <a href="../help/help.html?ca=aboutUsedCar" target="_blank" class="site-link-item tp2">关于二手车</a>
+        <a href="../help/help.html?ca=question" target="_blank" class="site-link-item">商城百科</a>
+        <a href="../help/help.html?ca=cooperation" target="_blank" class="site-link-item last">商务合作</a>
+    </div>
+</div>                <!-- copyright -->
+                <div class="site-copyright">
+    <div class="con-wrap">
+        <p class="site-copyright-con">mall.changan.com.cn All Rights Reserved.长安商城 渝ICP备:06006808  增值电信业务经营许可证编号:渝B-20160009</p>
+    </div>
+</div>            </div>
+    </div>
+
+<!-- 返回顶部 -->
+<div class="go-back" id="js-GoTopBox">
+    <!--<a class="item site-home" href="#">-->
+    <!--<div class="floating_left">长安汽车</div>-->
+    <!--</a>-->    
+        <a class="item booking_buyao js-doing" href="../testDrive/index.html" target="_blank">
+        <div class="floating_left">预约试驾</div>
+    </a>
+            <a class="item services" id="js-live800Side"
+       href='http://cazx.changan.com.cn/live800/chatClient/chatbox.jsp?companyID=8048&configID=681&skillId=192&enterurl=http://mall.changan.com.cn/ca-web/home/&prplType=%e7%94%b5%e5%95%86'
+       target="_blank">
+        <div class="floating_left">在线客服</div>
+    </a>
+        <a class="item feedback" id="js-feedback">
+        <div class="floating_left">意见反馈</div>
+    </a>
+    <div class="item go-top" id="js-siteGoTop"></div>
+</div>
+
+<!--
+<div class="modal fade" id="bookingModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">预约试驾</div>
+            </div>
+            <div class="modal-body">
+                <div class="body-up">
+                    <div id="name">姓名：</div>
+                    <input type="text" class="name-input"/>
+                    <div id="phone">手机号码：</div>
+                    <input type="text" class="phone-input"/>
+                    <div id="select-location">选择省市：</div>
+                    <div id="provinces">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择省</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="cities">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择市</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="select-dealer">选择经销商：</div>
+                    <div id="dealers">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择经销商</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="select-series">选择车系：</div>
+                    <div name="" id="brand">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">品牌</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div name="" id="car-series">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">车系</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="pre-time">预约时间：</div>
+                    <input type="text" class="time-show prestart" placeholder="请选择时间"
+                           data-date-format="yyyy-mm-dd"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-reverse" id="checkPwd" style="float:left">确认</button>
+                <button type="button" class="btn btn-reverse" id="getout" style="float:left" data-dismiss="modal"
+                        aria-label="Close">取消</button>
+            </div>
+        </div>
+        &lt;!&ndash; /.modal-content &ndash;&gt;
+    </div>
+    &lt;!&ndash; /.modal-dialog &ndash;&gt;
+</div>-->
+
+
+<!--支付modal-->
+<div id='pay'>
+    <div class="modal fade" id="payModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-body-left"><img src="../pay/images/icon.png" /></div>
+                    <div class="modal-body-right">
+                        <p class="modal-body-title">请您在新打开的页面上完成付款</p>
+                        <p>付款完成前请不要关闭此窗口</p>
+                        <p>完成付款后请根据您的情况点击下面的按钮</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="sure-select btn btn-reverse pay-select">已完成付款</div>
+                    <a class="cancle-select btn btn-cancel pay-cancle-select" href="../help/help.html?ca=question" target="_blank" data-dismiss="modal">付款遇到问题</a>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+
+<!--评价图片灯箱-->
+<div class="modal modal-lg fade" id="img-show">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="icon caec-iconfont">&#xe60b;</i>
+                </div>
+            </div>
+            <div class="modal-body img-modal-content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../rock/com/requirejs/require.min.js" data-main="backbone-main.js?ver=20170412091648"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?30fda721a836ca30a2c397fcff17f90f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
