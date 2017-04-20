@@ -1,6 +1,3 @@
-/**
- * Created by KirK-Jiang on 2015/4/13.
- */
 // The build will inline common dependencies into this file. For any third party
 // dependencies, like jQuery, place them in the lib folder. Configure loading
 // modules from the lib directory, except for 'app' ones, which are in a sibling
@@ -45,18 +42,4 @@ requirejs.config({
             deps: ['backbone']
         }
     }
-});
-
-require([
-    'jquery', 'domReady!', '../cacf/backbone-router'
-], function ($, domReady, Router) {
-    //console.log("Dom Is Ready! Do Something Init!");
-    window.rock_router = new Router();
-    Backbone
-        .history
-        .start({pushState: false});
-
-    require([
-        'checkbox', "placeholder", 'topNav', "bootstrap"
-    ], function () {});
 });

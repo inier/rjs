@@ -4,10 +4,11 @@
 define([
         'jquery',
         'backbone',
-        'baseClient',
-        'json!data/routerConfig.json'
+        'baseClient'
+        //,
+        //'json!data/routerConfig.json'
     ],
-    function ($, Backbone, baseClient, config) {
+    function ($, Backbone, baseClient) {
         
         return Backbone.Router.extend({
             isHomeView: false,

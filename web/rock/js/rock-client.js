@@ -2,7 +2,9 @@
  * Created by KirK-Jiang on 2015/4/14.
  */
 define(
-    ["text!../rock/profile/profile.json", "jquery", "underscore"],
+    [
+        //"json!rock/profile/profile.json",
+         "jquery", "underscore"],
     function (Profile, $, _) {
         var config = eval("(" + Profile + ")");
         var basePath = config.serverUrl;

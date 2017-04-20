@@ -28,10 +28,10 @@
 define([
         'jquery',
         'underscore',
-        'text!../rock/js/dialog/dialog.html',
+        //'text!rock/js/dialog/dialog.html',
         'bootstrap'
     ],
-    function ($, _, Tpl) {
+    function ($, _) {
         function dialog(options) {
             var me = this;
 
