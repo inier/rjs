@@ -1,64 +1,91 @@
 ({
-    baseUrl: "",
-    name: "../home/index",
-    //optimize: "none",
-    out: "../home/build.js",
-	//userStrict: false,
-	//fileExclusionRegExp: /^(css\\!../recommend/recommend)\.css$/,
-	paths: {
-        text: '../rock/com/requirejs-text/text',
-        json: '../rock/com/requirejs-json/json',
-        css: '../rock/com/requirejs-css/css',
-        domReady: '../rock/com/requirejs-domready/domReady',
-        jquery: '../rock/com/jquery/jquery-1.11.2.min',
-        underscore: '../rock/com/underscore/underscore',
-        backbone: '../rock/com/backbone/backbone',
-        moment: '../rock/com/moment/moment',
-        // lib
-        baseClient: '../rock/js/rock-client',
-        rockBase: '../rock/js/rockbase',
-        dialog:'../rock/js/dialog/dialog',
-        checkbox: '../rock/js/checkbox/Checkbox',
-        placeholder: '../rock/js/placeholder/Placeholder',
-        feedback:'../rock/js/feedback/feedback',
-        user:'../login/user',
-        cartMenu:'../cartMenu/nav-cart',
-		recommend:'../recommend/recommend',
-        // jquery_plugin
-        pngfix: '../rock/com/jquery-pngFix/pngFix',
-        flexslider: '../rock/com/jquery-FlexSlider/jquery.flexslider.min',
-        pagination:'../rock/com/jquery-pagination/js/pagination',
-        raty:'../rock/com/jquery-raty/jquery.raty',
-		lazyload:'../rock/com/jquery-lazyload/jquery.lazyload.min',
-        bootstrap:'../rock/com/bootstrap/js/bootstrap.min',
-        imgReload:'../rock/js/imgReload/imgReload',
-        iealert:'../rock/com/jquery-ieAlert/iealert'
+    appUrl: "./web",
+    baseUrl: "../../web",
+    urlArgs: "ver=20170412091648",
+    //mainConfigFile: "../mainConfig.js",
+    fileExclusionRegExp: /^(r|build)\.js|.*\.scss$/,
+    dir: "../../web-built",
+    modules: [
+        {
+            name: 'rock/common',
+            include: [
+            'domReady', 'text', 'css', 'json',
+            'baseClient',
+            'placeholder',
+            'checkbox',
+            'goBack', 'dialog',
+            'siteNav'
+            ],
+            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
+        }
+        ,
+         {
+            name: 'home/index',
+            include: [],
+            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
+        }, {
+            name: 'cars/index',
+            include: [],
+            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
+        }, {
+            name: 'cacf/index',
+            include: ['cacf/backbone-main'],
+            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
+        }
+    ],
+    optimize: "uglify2",
+    optimizeCss: 'standard',
+    removeCombined: true,
+    generateSourceMaps: true,   
+    uglify2: {
+        output: {
+            beautify: true
+        },
+        compress: {
+            sequences: false,
+            global_defs: {
+                DEBUG: false
+            }
+        },
+        warnings: true,
+        mangle: false
     },
+    paths: {
+        text: 'rock/com/requirejs-text/text',
+        json: 'rock/com/requirejs-json/json',
+        css: 'rock/com/requirejs-css/css',
+        domReady: 'rock/com/requirejs-domready/domReady',
+        jquery: 'rock/com/jquery/jquery-1.11.2',
+        underscore: 'rock/com/underscore/underscore',
+        backbone: 'rock/com/backbone/backbone',
+        bootstrap: 'rock/com/bootstrap/js/bootstrap',
+        // lib
+        baseClient: 'rock/js/rock-client',
+        rockBase: 'rock/js/rockbase',
+        siteNav: 'rock/js/nav-main',
+        topNav: 'rock/js/nav-details',
+        dialog: 'rock/js/dialog/dialog',
+        checkbox: 'rock/js/checkbox/Checkbox',
+        placeholder: 'rock/js/placeholder/Placeholder',
+        goBack: 'rock/js/goBack/goBack',
+        common: 'rock/common'
+        // jquery_plugin
+    },
+    waitSeconds: 0,
     shim: {
-         backbone: {
-            deps: ['underscore'],
-            exports: 'backbone'
-        },
-
-        bootstrap:{
-        	deps: ['jquery'],
-            exports: 'bootstrap'
-        },
-
-        pngfix: ['jquery'],
-
-        flexslider: ['jquery'],
-
-        pagination:['jquery'],
-        
-        imgReload:['jquery'],
-
-        raty:['jquery'],
-
         underscore: {
             exports: '_'
         },
-
+        backbone: {
+            deps: [
+                'underscore', 'jquery'
+            ],
+            exports: 'Backbone'
+        },
+        bootstrap: {
+            deps: ['jquery'],
+            exports: 'bootstrap'
+        },
         rockBase: {
             deps: ['backbone']
         }

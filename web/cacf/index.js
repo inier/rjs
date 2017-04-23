@@ -6,7 +6,7 @@ define([
     'dialog',
     'goBack',
     'cacf/cacf-client'
-], function ($, BaseClient, RockBase, Tpl, Dialog, GoBack, Client) {
+], function ($, BaseClient, RockBase, Tpl, Dialog,  GoBack, Client) {
     var animateState = 0; //是否切换到下一张缩略图，0表示切换，1表示不切换。     动画正在进行时不切换
     var reviewAjaxFlag = 0; //是否加载过参与记录的标志，加载过为1 ，否则为0
     var timer, //秒杀或者限购的定时器
