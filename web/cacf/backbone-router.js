@@ -26,7 +26,7 @@ define(['jquery', 'backbone'], function($, Backbone) {
         home:function(){
             var router = this;
             //console.log("first view:   "+baseClient.firstModule);
-            require(['../cacf/index'],function(homeView){
+            require(['../cacf/indexs'],function(homeView){
                 router.changePage(new homeView());
 
             });
