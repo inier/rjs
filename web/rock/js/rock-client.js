@@ -2,9 +2,9 @@
  * Created by KirK-Jiang on 2015/4/14.
  */
 define([
-    "json!rock/profile/profile.json", "jquery", "underscore"
-], function (Profile, $, _) {
-    var config = eval("(" + Profile + ")");
+    "jquery", "underscore", "json!rock/profile/profile.json"
+], function ($, _, Profile) {
+    var config = Profile;
     var basePath = config.serverUrl;
     var firstModule = config.firstModule;
     var pageSize = config.pageSize;

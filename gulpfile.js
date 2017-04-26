@@ -5,44 +5,27 @@ var del = require('del');
 var rjs = require('requirejs');
 
 var libJS = ['jquery', 'underscore', 'backbone', 'bootstrap'];
-var commonJS = [
-  'domReady'
-  // ,'baseClient', 'placeholder', 'checkbox', 'goBack', 'dialog', 'siteNav'
+var exc = [
+  'domReady',
+  'baseClient',
+  'placeholder',
+  'checkbox',
+  'goBack',
+  'dialog',
+  'siteNav'
 ];
+// ,'baseClient', 'placeholder', 'checkbox', 'goBack', 'dialog', 'siteNav',
+  // 'json','text','css'
+var commonJS = [];
 var config = {
   rjs: {
     js: {
       appUrl: "./web",
       baseUrl: './web',
-      // mainConfigFile: "./web/mainConfig.js", 
+      //mainConfigFile: "./web/mainConfig.js",
       fileExclusionRegExp: /^(r|build)\.js|.*\.scss$/,
       dir: "./web-built",
       urlArgs: "ver=20170412091648",
-      modules: [
-        {
-          name: 'rock/common',
-          include: commonJS,
-          exclude: libJS
-        }, {
-          name: 'home/index',
-          include: [],
-          exclude: libJS
-            .concat(commonJS)
-            .concat(['common'])
-        }, {
-          name: 'cars/index',
-          include: [],
-          exclude: libJS
-            .concat(commonJS)
-            .concat(['common'])
-        }, {
-          name: 'cacf/index',
-          include: ['cacfEntry'],
-          exclude: libJS
-            .concat(commonJS)
-            .concat(['common'])
-        }
-      ],
       paths: {
         text: 'rock/com/requirejs-text/text',
         json: 'rock/com/requirejs-json/json',
@@ -61,8 +44,7 @@ var config = {
         checkbox: 'rock/js/checkbox/Checkbox',
         placeholder: 'rock/js/placeholder/Placeholder',
         goBack: 'rock/js/goBack/goBack',
-        common: 'rock/common',
-        cacfEntry: 'cacf/backbone-main'
+        common: 'rock/common'
         // jquery_plugin
       },
       waitSeconds: 0,
@@ -84,6 +66,31 @@ var config = {
           deps: ['backbone']
         }
       },
+      modules: [
+        {
+          name: 'rock/common',
+          include: ['domReady'],
+          exclude: libJS.concat(exc)
+        }, {
+          name: 'home/index',
+          include: [],
+          exclude: libJS
+            .concat(exc)
+            .concat(['common', 'json', 'text', 'css','json!rock/profile/profile.json'])
+        }, {
+          name: 'cars/index',
+          include: [],
+          exclude: libJS
+            .concat(exc)
+            .concat(['common', 'json', 'text', 'css','json!rock/profile/profile.json'])
+        }, {
+          name: 'cacf/index',
+          include: ['cacf/backbone-main'],
+          exclude: libJS
+            .concat(exc)
+            .concat(['common', 'json', 'text', 'css','json!rock/profile/profile.json'])
+        }
+      ],
       optimize: "none",
       optimizeCss: 'standard',
       removeCombined: true,

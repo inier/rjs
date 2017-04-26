@@ -1,55 +1,9 @@
 ({
-    appUrl: "./web",
-    baseUrl: "../../web",
-    urlArgs: "ver=20170412091648",
-    //mainConfigFile: "../mainConfig.js",
+    appDir: '../../web',
+    baseUrl: ".",
+    mainConfigFile: "../mainConfig.js",
     fileExclusionRegExp: /^(r|build)\.js|.*\.scss$/,
     dir: "../../web-built",
-    modules: [
-        {
-            name: 'rock/common',
-            include: [
-            'domReady', 'text', 'css', 'json',
-            'baseClient',
-            'placeholder',
-            'checkbox',
-            'goBack', 'dialog',
-            'siteNav'
-            ],
-            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
-        }
-        ,
-         {
-            name: 'home/index',
-            include: [],
-            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
-        }, {
-            name: 'cars/index',
-            include: [],
-            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
-        }, {
-            name: 'cacf/index',
-            include: ['cacf/backbone-main'],
-            exclude: ['jquery', 'underscore', 'backbone', 'bootstrap']
-        }
-    ],
-    optimize: "uglify2",
-    optimizeCss: 'standard',
-    removeCombined: true,
-    generateSourceMaps: true,   
-    uglify2: {
-        output: {
-            beautify: true
-        },
-        compress: {
-            sequences: false,
-            global_defs: {
-                DEBUG: false
-            }
-        },
-        warnings: true,
-        mangle: false
-    },
     paths: {
         text: 'rock/com/requirejs-text/text',
         json: 'rock/com/requirejs-json/json',
@@ -89,5 +43,94 @@
         rockBase: {
             deps: ['backbone']
         }
+    },
+    modules: [
+        {
+            name: 'rock/common',
+            include: ['domReady'],
+            exclude: [
+                'jquery',
+                'underscore',
+                'backbone',
+                'bootstrap',
+                'baseClient',
+                'goBack',
+                'dialog',
+                'checkbox',
+                'placeholder',
+                'siteNav'
+            ]
+        }, {
+            name: 'home/index',
+            include: [],
+            exclude: [
+                'jquery',
+                'underscore',                
+                'backbone',
+                'bootstrap',
+                'baseClient',
+                'goBack',
+                'dialog',
+                'checkbox',
+                'placeholder',
+                'siteNav',
+                'common',
+                'json','text','css',
+                'json!rock/profile/profile.json'
+            ]
+        }, {
+            name: 'cars/index',
+            include: [],
+            exclude: [
+                'jquery',
+                'underscore',                
+                'backbone',
+                'bootstrap',
+                'baseClient',
+                'goBack',
+                'dialog',
+                'checkbox',
+                'placeholder',
+                'siteNav',
+                'common',
+                'json','text','css',
+                'json!rock/profile/profile.json'
+            ]
+        }, {
+            name: 'cacf/index',
+            include: ['cacf/backbone-main'],
+            exclude: [
+                'jquery',
+                'underscore',                         
+                'backbone',
+                'bootstrap',
+                'baseClient',
+                'goBack',
+                'dialog',
+                'checkbox',
+                'placeholder',
+                'siteNav',
+                'common',       
+                'json','text','css',
+                'json!rock/profile/profile.json'
+            ]
+        }
+    ],
+    optimize: "none",
+    optimizeCss: 'standard',
+    removeCombined: true,
+    //generateSourceMaps: true,
+    uglify2: {
+        output: {
+            beautify: true
+        },
+        compress: {
+            sequences: false,
+            global_defs: {
+                DEBUG: false
+            }
+        },
+        warnings: true,
+        mangle: false
     }
 })
