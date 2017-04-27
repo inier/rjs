@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+        <title>长安商城-长安汽车旗下电商平台-买车用车，上长安商城</title>
+    <meta name="description" content="长安商城-国内首发定制化购车电子商务平台，提供C2M在线定制、订整车、购买精品备件、车险续保、办理金融服务，为用户提供全消费生命周期的愉悦服务体验。">
+    <meta name="keyword" content="网上商城，网上购车，网上购物，C2M，定制车，整车，精品备件，车险续保，金融服务，长安商城">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <script>
+        var mobileUrl = "http://cloud.mall.changan.com.cn/caecapp/main/index.html";
+        // 判断Mobile浏览器跳转逻辑
+        (function isMobile(mobileUrl) {
+            var MobileUA = (function () {
+                var ua = navigator.userAgent.toLowerCase();
+                var mua = {
+                    IOS: /ipod|iPhone|ipad/.test(ua), //iOS
+                    IPHONE: /iphone/.test(ua), //iPhone
+                    IPAD: /ipad/.test(ua), //iPad
+                    ANDROID: /android/.test(ua), //Android Device
+                    WINDOWS: /windows/.test(ua), //Windows Device
+                    TOUCH_DEVICE: ('ontouchstart' in window) || /touch/.test(ua), //Touch Device
+                    MOBILE: /mobile/.test(ua), //Mobile Device (iPad)
+                    ANDROID_TABLET: false, //Android Tablet
+                    WINDOWS_TABLET: false, //Windows Tablet
+                    TABLET: false, //Tablet (iPad, Android, Windows)
+                    SMART_PHONE: false //Smart Phone (iPhone, Android)
+                };
+                mua.ANDROID_TABLET = mua.ANDROID && !mua.MOBILE;
+                mua.WINDOWS_TABLET = mua.WINDOWS && /tablet/.test(ua);
+                mua.TABLET = mua.IPAD || mua.ANDROID_TABLET || mua.WINDOWS_TABLET;
+                mua.SMART_PHONE = mua.MOBILE && !mua.TABLET;
+
+                return mua;
+            }()); //SmartPhone
+            if (MobileUA.SMART_PHONE) { // 移动端链接地址
+                document.location.href = mobileUrl;
+            }
+        })(mobileUrl);
+    </script>
+    <link rel="stylesheet" href="../rock/com/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../rock/css/common.css?ver=20170412091648">
+        <!-- 引入当前页面内部的CSS -->
+    <link rel="stylesheet" href="index.css?ver=20170412091648">
+        <link rel="shortcut icon" href="../favicon.ico"/>
+
+    <!--[if lt IE 8]>
+    <script src="../rock/com/jquery/jquery-1.11.2.min.js"></script>
+    <script src="../rock/com/jquery-ieAlert/iealert.js"></script>
+        <script>
+        $(document).ready(function () {
+            $("body").iealert();
+        });
+    </script>
+        <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="../rock/com/respond/respond.min.js"></script>
+    <script src="../rock/com/html5shim/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="js-caSiteNav" class="ca-header">
+    <!--吊顶导航-->
+    <div id="js-TopNav" class="nav-top z-fixed">
+    <div class="con-wrap clearfix">
+        <!-- link-home -->
+                            <!-- link-address -->
+            <div id="location-select" class="nav-top-bd-l"></div>            <!-- link-login -->
+            <div class="nav-top-bd-l user-login">
+    <div class="menu">
+        <div class="menu-hd">
+            <a href="../login/login.html" target="_self">登录</a>
+        </div>
+    </div>
+    <div class="u-split">|</div>
+    <div class="menu">
+        <div class="menu-hd">
+            <a href="../login/regist.html" target="_self">注册</a>
+        </div>
+    </div>
+</div>                <ul class="nav-top-bd-r">
+            <li class="menu">
+                <div class="menu-hd js-menu-href js-order-href">
+                    <a target="_blank">我的订单</a>
+                </div>
+            </li>
+            <li class="menu">
+                <div class="menu-hd js-menu-href js-person-href">
+                    <a target="_blank">个人中心</a>
+                </div>
+            </li>
+            <li class="menu  menu-shopping-num">
+                <div class="menu-hd nav-carts-number js-menu-href js-cart-href">
+                    <a target="_blank">
+                        <i class="nav-top-ion caec-iconfont">&#xe626;</i>
+                        购物车<span class="menu-cart-num">(0)</span>
+                    </a>
+                </div>
+                <div class="menu-bd nav-shopping-cart">
+                    <div class="menu-bd-panel mini-cart">
+                        <ul class="mini-cart-bd">
+                        </ul>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-footer-item mini-cart-number">
+                                <div class="mini-cart-footer-count">共<span class="mini-cart-footer-num"></span>件商品
+                                </div>
+                                <div class="mini-cart-footer-pricew">¥<span class="mini-cart-footer-price"></span>
+                                </div>
+                            </div>
+                            <a class="mini-cart-footer-item" href="../cart/index.html" target="_blank">
+                                <div class="mini-cart-go btn btn-reverse">查看我的购物车</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!--<li class="menu">
+                <div class="menu-hd nav-message-info js-menu-href js-message-href">
+                    <a href="../person-center/entrance.html?type=message" target="_blank">
+                        <i class="nav-top-ion caec-iconfont">&#xe63e;</i>
+                        消息<span class="menu-message-num">(0)</span>
+                    </a>
+                </div>
+            </li>-->
+            <li class="u-split">|</li>
+            <li class="menu">
+                <div class="menu-hd">
+                    <a id="js-live800Nav" href='http://cazx.changan.com.cn/live800/chatClient/chatbox.jsp?companyID=8048&configID=681&skillId=192&enterurl=http://mall.changan.com.cn/ca-web/home/&prplType=%e7%94%b5%e5%95%86'
+                       target="_blank">
+                        <i class="nav-top-ion caec-iconfont">&#xe651;</i>
+                        <span>在线客服</span>
+                    </a>
+                </div>
+            </li>
+            <li class="menu hovered">
+                <div class="menu-hd">
+                    <a href="https://mall.changan.com.cn/ca-web/APP/download/index.html" target="_blank">
+                        <i class="nav-top-ion caec-iconfont">&#xe621;</i>
+                        <span>手机商城</span>
+                    </a>
+                        <span class="arrow-icon-wrapper">
+                            <i class="menu-arrow-down caec-iconfont">&#xe611;</i>
+                        </span>
+                </div>
+                <div class="menu-bd">
+                    <a class="menu-bd-panel" href="https://mall.changan.com.cn/ca-web/APP/download/index.html"
+                       target="_blank">
+                        <img src="../rock/img/qrcode-app-caec.jpg?ver=20170412091648" width="121">
+                        <div class="menu-bd-txt">下载商城APP</div>
+                    </a>
+                </div>
+            </li>
+            <li class="menu hovered hovered-no-pointer">
+                <div class="menu-hd">
+                    <a href="javascript:">关注商城</a>
+                        <span class="arrow-icon-wrapper">
+                            <i class="menu-arrow-down caec-iconfont">&#xe611;</i>
+                        </span>
+                </div>
+                <div class="menu-bd z-pos-right">
+                    <div class="menu-bd-panel">
+                        <img src="../rock/img/qrcode-weixin-ca.jpg?ver=20170412091648" width="121">
+
+                        <div class="menu-bd-txt">关注商城微信公众号</div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu">
+                <div class="menu-hd">
+                    <a href="http://www.changan.com.cn" target="_blank">进入官网</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>    <!--一级导航-->
+            <div class="nav-main con-wrap clearfix" id="js-navMain">
+    <a class="site-logo" href="../home/index.html" target="_self">
+                <div class="site-slogan"></div>
+            </a>
+                <ul id="js-mainNav" class="nav-main-menu">
+                        <li class="menu active">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="javascript:void(0)" target="_self">首页</a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../cars/index.html" target="_self">我要买车</a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../diys/index.html" target="_self">定制爱车</a>
+            </div>
+        </li>
+                        <li class="menu menu-hot ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../usedCar/index.html" target="_self">二手车<i class="menu-hd-hot caec-iconfont">
+                    &#xe64f;</i></a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../partsList/index.html" target="_self">精品配件</a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../finance/index.html" target="_self">汽车保险</a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../testDrive/index.html" target="_self">预约试驾</a>
+            </div>
+        </li>
+                        <li class="menu ">
+            <div class="menu-hd">
+                <a class="menu-hd-link" href="../dealer/index.html" target="_self">经销商查询</a>
+            </div>
+        </li>
+        <li class="nav-main-current"></li>
+    </ul>
+    <div class="nav-brand-search input" style='display:none'>
+        <input class="nav-brand-search-input" type="text">
+        <span class="place-holder" data-placeholder-for=".nav-brand-search-input">搜索更多精彩</span>
+        <a href='../search/index.html' target="_blank"><span class="nav-brand-search-btn"></span></a>
+    </div>
+        </div>        <!--轮播-->
+                    <div class="slider-box no-js">
+            <!-- 轮播 -->
+            <!--flash start-->
+<div class="flexslider">
+    <ul class="slides" id="tSlides">
+                <!--首页广告轮播-->
+        <li class="slider-item">
+            <a class="slider-item-img">
+                <img src="img/slider-home-01-bak.jpg?ver=20170412091648" alt="">
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+            </ul>
+</div>
+<!--flash end-->        </div>
+            </div>
+
+<div class="hotpoint con-wrap">
+    <div class="container-fluid">
+        <ul class="row">
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp01"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp02"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp03"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp04"></div>
+            </li>
+            <li class="item-split col-md-1 col-sm-1 col-xs-1">
+            </li>
+            <li class="item-hotpoint col-md-4 col-sm-4 col-xs-4">
+                <div class="hotp-item-con hp05"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 页面内容区 -->
+<div class="con-wrap">
+        <!-- 爱车定制 -->
+<div class="car-builder unselectable" id="carBuilder">
+    <div id='onLoading' class='loading show'></div>
+    <!--<div class="car-builder-bg">-->
+    <!--<img src="img/car-builder-bg.jpg">-->
+    <!--</div>-->
+    <span class="car-builder-title hide"></span>
+
+    <div class="car-builder-go hide">
+        <a href="../diys/index.html" target="_blank"
+           class="btn btn-reverse car-builder-ctrl-go" data-model="10235">
+            <i class="icon-go"></i><span>定制爱车</span>
+        </a>
+    </div>
+    <div class="car-builder-box hide">
+        <div class="car-builder-wrap" id="carBuilderWrap">
+            <img class="car-base" src="../home/img/base/base02.png?ver=20170412091648">
+            <img class="car-skin color1"
+                 src="../rock/img/car-builder/cs15/exteriorColor/black/02.png"
+                 alt="">
+            <img class="car-skin color2"
+                 src="../rock/img/car-builder/cs15/exteriorColor/blue/02.png" alt="">
+            <img class="car-skin color3"
+                 src="../rock/img/car-builder/cs15/exteriorColor/red/02.png" alt="">
+            <img class="car-skin color4 active" src="../rock/img/car-builder/cs15/exteriorColor/orange/02.png" alt="">
+            <img class="car-skin color5"
+                 src="../rock/img/car-builder/cs15/exteriorColor/gold/02.png"
+                 alt="">
+            <img class="car-skin color6"
+                 src="../rock/img/car-builder/cs15/exteriorColor/gray/02.png" alt="">
+            <img class="car-skin color7"
+                 src="../rock/img/car-builder/cs15/exteriorColor/white/02.png"
+                 alt="">
+            <!--<img class="car-base" src="../rock/img/car-builder/cs15/roofColor/white/02.png?ver=20170412091648" alt="">-->
+            <!--<img class="car-base" src="../rock/img/car-builder/cs15/louver/level2/02.png?ver=20170412091648" alt="">-->
+        </div>
+        <div class="car-builder-mask"></div>
+    </div>
+    <div class="car-builder-ctrl" id="carBuilderCtrl">
+        <!-- 调色板 -->
+        <div class="ctrl-palette" id="ctrlPalette">
+            <div class="ctrl-palette-img" id="ctrlPaletteImg">
+                <img src="../home/img/ctrl-palette.jpg?ver=20170412091648">
+                <img src="../home/img/ctrl-palette.jpg?ver=20170412091648">
+                <img src="../home/img/ctrl-palette.jpg?ver=20170412091648">
+            </div>
+        </div>
+        <!-- 触摸板 -->
+        <div class="ctrl-touch" id="ctrlTouch" data-currentX="-812"></div>
+        <!-- tip动画 -->
+        <div class="ctrl-tip" id="ctrlTip">
+            <div class="handle-line"></div>
+            <div class="handle-circle pos-l"></div>
+            <div class="handle-circle pos-r"></div>
+            <div class="handle-hand">
+                <!--<img src="../home/img/car-builder-handle-hand.png?ver=20170412091648">-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 精选活动 -->
+<div class="car-activity" id="carActivity">
+    <div class="bk-title bk-title-shim">
+        <span class="bk-title-txt">精选活动</span>
+    </div>
+    <div class="container-fluid">
+        <div class="row activity-panel">
+            <div class="col-padding-0 col-md-17 col-sm-16 col-xs-16">
+                <a class="activity-img" href="../car/index.html" target="_blank">
+                    <img class="lazy" data-original="../home/img/activity-img-yxv7.jpg?ver=20170412091648">
+                </a>
+            </div>
+            <div class="col-padding-0 col-md-7 col-sm-8 col-xs-8">
+                <a class="goods-panel" href="../car/index.html" target="_blank">
+                    <div class="goods-title">
+                        <div class="goods-title-name">悦翔V7</div>
+                        <div class="goods-title-summary">家用小资车，实惠之选</div>
+                    </div>
+                    <div class="goods-price">
+                        <div class="goods-price-money">
+                            <span class="goods-price-text">定金：</span>
+                            <span class="goods-price-currency">￥</span>
+                            <span class="goods-price-value"><i class="big-number">99</i>.00</span>
+                        </div>
+                        <div class="goods-price-original">
+                            ￥<span class="original-price">400.00</span>
+                        </div>
+                    </div>
+                    <div class="goods-go btn btn-reverse btn-lg">
+                        立即抢购
+                    </div>
+                    <!--<div class="goods-panel-corner"></div>-->
+                    <!--<div class="goods-panel-logo"></div>-->
+                </a>
+            </div>
+        </div>
+        <div class="row activity-panel">
+            <div class="col-padding-0 col-md-17 col-sm-16 col-xs-16">
+                <a class="activity-img" href="../car/index.html" target="_blank">
+                    <!--<img src="../home/img/activity-img-os.jpg?ver=20170412091648" alt="">-->
+                    <img class="lazy" data-original="../home/img/activity-img-os.jpg?ver=20170412091648">
+                </a>
+            </div>
+            <div class="col-padding-0 col-md-7 col-sm-8 col-xs-8">
+                <a class="goods-panel" href="../car/index.html" target="_blank">
+                    <div class="goods-title">
+                        <div class="goods-title-name">欧尚</div>
+                        <div class="goods-title-summary">欧式风尚 自得7乐</div>
+                    </div>
+                    <div class="goods-price">
+                        <div class="goods-price-money">
+                            <span class="goods-price-text">定金：</span>
+                            <span class="goods-price-currency">￥</span>
+                            <span class="goods-price-value"><i class="big-number">99</i>.00</span>
+                        </div>
+                        <div class="goods-price-original">
+                            ￥<span class="original-price">400.00</span>
+                        </div>
+                    </div>
+                    <div class="goods-go btn btn-reverse btn-lg">
+                        立即抢购
+                    </div>
+                    <!--<div class="goods-panel-corner"></div>-->
+                    <!--<div class="goods-panel-logo"></div>-->
+                </a>
+            </div>
+        </div>
+        <div class="row activity-panel last">
+            <div class="col-padding-0 col-md-17 col-sm-16 col-xs-16">
+                <a class="activity-img" href="../car/index.html" target="_blank">
+                    <!--<img src="../home/img/activity-img-rx.jpg?ver=20170412091648" alt="">-->
+                    <img class="lazy" data-original="../home/img/activity-img-rx.jpg?ver=20170412091648">
+                </a>
+            </div>
+            <div class="col-padding-0 col-md-7 col-sm-8 col-xs-8">
+                <a class="goods-panel" href="../car/index.html" target="_blank">
+                    <div class="goods-title">
+                        <div class="goods-title-name">睿行M80</div>
+                        <div class="goods-title-summary">多功能 大空间</div>
+                    </div>
+                    <div class="goods-price">
+                        <div class="goods-price-money">
+                            <span class="goods-price-text">定金：</span>
+                            <span class="goods-price-currency">￥</span>
+                            <span class="goods-price-value"><i class="big-number">99</i>.00</span>
+                        </div>
+                        <div class="goods-price-original">
+                            ￥<span class="original-price">400.00</span>
+                        </div>
+                    </div>
+                    <div class="goods-go btn btn-reverse btn-lg">
+                        立即抢购
+                    </div>
+                    <!--<div class="goods-panel-corner"></div>-->
+                    <!--<div class="goods-panel-logo"></div>-->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 人气车型 -->
+<div class="car-models" id="carModels">
+    <div class="bk-title">
+        <span class="bk-title-txt">人气车型</span>
+        <a class="bk-title-more" href="../cars/index.html">查看全部<i class="caec-iconfont">&#xe657;</i></a>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="goods-panel-wrap">
+                <div class="col-padding-0 col-md-16 col-sm-16 col-xs-16">
+                    <a class="goods-panel" href="../car/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">CS75四驱</div>
+                            <div class="goods-title-summary">中大型SUV</div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <div class="goods-price-text">官方指导价：</div>
+                                <div class="goods-price-value"><i class="big-number">9.28~13.68</i>万元</div>
+                            </div>
+                        </div>
+                        <div class="goods-img x2">
+                            <img class="lazy" data-original="../home/img/car-cs75.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../car/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">欧尚</div>
+                            <div class="goods-title-summary">欧式风尚 自得7乐</div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <div class="goods-price-text">官方指导价：</div>
+                                <div class="goods-price-value"><i class="big-number">9.28~13.68</i>万元</div>
+                            </div>
+                        </div>
+                        <div class="goods-img">
+                            <!--<img src="../home/img/car-os.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/car-os.jpg?ver=20170412091648">
+                        </div>
+                        <!--<div class="goods-pay-count">-->
+                        <!--<div class="goods-pay-count-bg caec-iconfont">&#xe665;</div>-->
+                        <!--<div class="goods-panel-logo"></div>-->
+                        <!--<div class="goods-panel-count-txt">-->
+                        <!--<p>已售</p><span>87412</span>辆-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../car/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">逸动XT</div>
+                            <div class="goods-title-summary">高性能运动轿跑</div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <div class="goods-price-text">官方指导价：</div>
+                                <div class="goods-price-value"><i class="big-number">9.28~13.68</i>万元</div>
+                            </div>
+                        </div>
+                        <div class="goods-img">
+                            <!--<img src="../home/img/car-ydxt.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/car-ydxt.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../car/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">悦翔V5</div>
+                            <div class="goods-title-summary">都市轿车新典范</div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <div class="goods-price-text">官方指导价：</div>
+                                <div class="goods-price-value"><i class="big-number">9.28~13.68</i>万元</div>
+                            </div>
+                        </div>
+                        <div class="goods-img">
+                            <!--<img src="../home/img/car-yxv5.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/car-yxv5.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../car/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">欧诺</div>
+                            <div class="goods-title-summary">多功能大空间</div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <div class="goods-price-text">官方指导价：</div>
+                                <div class="goods-price-value"><i class="big-number">9.28~13.68</i>万元</div>
+                            </div>
+                        </div>
+                        <div class="goods-img">
+                            <img class="lazy" data-original="../home/img/car-on.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 精品配饰 -->
+<div class="car-gadgets" id="carGadgets">
+    <div class="bk-title">
+        <span class="bk-title-txt">精品配件</span>
+        <a class="bk-title-more" href="../partsList/index.html" target="_blank">查看全部<i class="caec-iconfont">
+            &#xe657;</i></a>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="goods-panel-wrap">
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel height-half" href="../parts/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">3键专用真皮钥匙包</div>
+                            <div class="goods-title-summary"></div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <span class="goods-price-value">￥<i class="big-number">99</i>.00</span>
+                            </div>
+                            <div class="goods-price-original">
+                                ￥<span class="original-price">199.00</span>
+                            </div>
+                        </div>
+                        <div class="goods-img-wrap">
+                            <div class="goods-img img-1-1">
+                                <!--<img src="../home/img/acc-3.jpg?ver=20170412091648" alt="">-->
+                                <img class="lazy" data-original="../home/img/acc-3.jpg?ver=20170412091648">
+                            </div>
+                        </div>
+                    </a>
+                    <a class="goods-panel height-half" href="../parts/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">车载空气净化器</div>
+                            <div class="goods-title-summary"></div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <span class="goods-price-value">￥<i class="big-number">99</i>.00</span>
+                            </div>
+                            <div class="goods-price-original">
+                                ￥<span class="original-price">199.00</span>
+                            </div>
+                        </div>
+                        <div class="goods-img img-1-1">
+                            <!--<img src="../home/img/acc-2.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/acc-2.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../parts/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">高清夜视迷你行车记录仪</div>
+                            <div class="goods-title-summary"></div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <span class="goods-price-value">￥<i class="big-number">99</i>.00</span>
+                            </div>
+                            <div class="goods-price-original">
+                                ￥<span class="original-price">199.00</span>
+                            </div>
+                        </div>
+                        <div class="goods-img img-1-1">
+                            <!--<img src="../home/img/acc-4.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/acc-4.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-padding-0 col-md-8 col-sm-8 col-xs-8">
+                    <a class="goods-panel" href="../parts/index.html" target="_blank">
+                        <div class="goods-title">
+                            <div class="goods-title-name">一拖三车载充电器</div>
+                            <div class="goods-title-summary"></div>
+                        </div>
+                        <div class="goods-price">
+                            <div class="goods-price-money">
+                                <span class="goods-price-value">￥<i class="big-number">99</i>.00</span>
+                            </div>
+                            <div class="goods-price-original">
+                                ￥<span class="original-price">199.00</span>
+                            </div>
+                        </div>
+                        <div class="goods-img img-1-1">
+                            <!--<img src="../home/img/acc-1.jpg?ver=20170412091648" alt="">-->
+                            <img class="lazy" data-original="../home/img/acc-1.jpg?ver=20170412091648">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 猜你喜欢 -->
+<div class="guess-like"></div>    </div>
+
+
+<div class="ca-footer">
+        <!-- links -->
+    <div class="site-foot con-wrap">
+    <div class="services-tel2"></div>
+    <div class="site-link">
+        <a href="../help/help.html" target="_blank" class="site-link-item">关于商城</a>
+        <a href="../help/help.html?ca=law" target="_blank" class="site-link-item">法律声明</a>
+        <a href="../help/help.html?ca=buy" target="_blank" class="site-link-item">选购流程</a>
+        <a href="../help/help.html?ca=aboutUsedCar" target="_blank" class="site-link-item tp2">关于二手车</a>
+        <a href="../help/help.html?ca=question" target="_blank" class="site-link-item">商城百科</a>
+        <a href="../help/help.html?ca=cooperation" target="_blank" class="site-link-item last">商务合作</a>
+    </div>
+</div>    
+        <!-- copyright -->
+    <div class="site-copyright">
+    <div class="con-wrap">
+        <p class="site-copyright-con">mall.changan.com.cn All Rights Reserved.长安商城 渝ICP备:06006808  增值电信业务经营许可证编号:渝B-20160009</p>
+    </div>
+</div>    </div>
+
+<!-- 返回顶部 -->
+<div class="go-back" id="js-GoTopBox">
+    <!--<a class="item site-home" href="#">-->
+    <!--<div class="floating_left">长安汽车</div>-->
+    <!--</a>-->    
+        <a class="item booking_buyao js-doing" href="../testDrive/index.html" target="_blank">
+        <div class="floating_left">预约试驾</div>
+    </a>
+            <a class="item services" id="js-live800Side"
+       href='http://cazx.changan.com.cn/live800/chatClient/chatbox.jsp?companyID=8048&configID=681&skillId=192&enterurl=http://mall.changan.com.cn/ca-web/home/&prplType=%e7%94%b5%e5%95%86'
+       target="_blank">
+        <div class="floating_left">在线客服</div>
+    </a>
+        <a class="item feedback" id="js-feedback">
+        <div class="floating_left">意见反馈</div>
+    </a>
+    <div class="item go-top" id="js-siteGoTop"></div>
+</div>
+
+<!--
+<div class="modal fade" id="bookingModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">预约试驾</div>
+            </div>
+            <div class="modal-body">
+                <div class="body-up">
+                    <div id="name">姓名：</div>
+                    <input type="text" class="name-input"/>
+                    <div id="phone">手机号码：</div>
+                    <input type="text" class="phone-input"/>
+                    <div id="select-location">选择省市：</div>
+                    <div id="provinces">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择省</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="cities">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择市</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="select-dealer">选择经销商：</div>
+                    <div id="dealers">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">请选择经销商</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="select-series">选择车系：</div>
+                    <div name="" id="brand">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">品牌</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div name="" id="car-series">
+                        <div class="select dropdown-toggle col-md-24 col-sm-24 col-xs-24" data-toggle="dropdown"
+                             aria-haspopup="true" aria-expanded="false">
+                            <span style="color: #626262">车系</span></div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <div id="pre-time">预约时间：</div>
+                    <input type="text" class="time-show prestart" placeholder="请选择时间"
+                           data-date-format="yyyy-mm-dd"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-reverse" id="checkPwd" style="float:left">确认</button>
+                <button type="button" class="btn btn-reverse" id="getout" style="float:left" data-dismiss="modal"
+                        aria-label="Close">取消</button>
+            </div>
+        </div>
+        &lt;!&ndash; /.modal-content &ndash;&gt;
+    </div>
+    &lt;!&ndash; /.modal-dialog &ndash;&gt;
+</div>-->
+
+<script type="text/javascript" src="../rock/com/requirejs/require.min.js" data-main="index.js?ver="></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?30fda721a836ca30a2c397fcff17f90f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

@@ -5,7 +5,7 @@ define([
     'text!../cars/index.html',
     'dialog',
     'goBack',
-    'cacf-client'
+    '../cacf/cacf-client'
 ], function ($, BaseClient, RockBase, Tpl, Dialog, GoBack, Client) {
     console.log('cacf page!!!!!');
 });

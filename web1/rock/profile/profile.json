@@ -1,0 +1,16 @@
+{
+  "firstModule": "../person-center/index",
+  "serverUrl": "https://ssl.mall.changan.com.cn/",
+  "pageSize": 20,
+  "expires": 3600,
+  "defaultSearch": "CS35",
+  "imageType": {
+    "60-30": "_60_30",
+    "100-100": "_100_100",
+    "200-200": "_200_200",
+    "300-200": "_300_200",
+    "600-300": "_600_300",
+    "600-600": "_600_600",
+    "1200-600": "_1200_600"
+  }
+}

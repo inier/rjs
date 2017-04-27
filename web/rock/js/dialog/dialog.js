@@ -28,7 +28,7 @@
 define([
         'jquery',
         'underscore',
-        'text!dialog.html',
+        'text!rock/js/dialog/dialog.html',
         'bootstrap'
     ],
     function ($, _) {

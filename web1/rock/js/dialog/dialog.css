@@ -1,0 +1,38 @@
+.com-dialog .content {
+    position: relative;
+    font-size: 18px;
+}
+
+.com-dialog .line-height {
+    line-height: 50px;
+}
+
+.com-dialog .img-icon {
+    width: 50px;
+    height: 50px;
+    border-width: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+
+.com-dialog .img-icon.well {
+    background: url("../../img/well.png?ver=&") no-repeat center;
+    background-size: 50px 50px;
+}
+
+.com-dialog .img-icon.tip {
+    background: url("../../img/tip.png?ver=&") no-repeat center;
+    background-size: 50px 50px;
+}
+
+.com-dialog .img-icon.build {
+    background: url("../../img/build.png?ver=&") no-repeat center;
+    background-size: 50px 50px;
+}
+
+.com-dialog .icon-content {
+    min-height: 50px;
+    width: 100%;
+    padding-left: 65px;
+}
