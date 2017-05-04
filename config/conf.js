@@ -86,9 +86,9 @@ const exc = [
     'dialog',
     'siteNav'
 ];
-// 'baseClient', 'placeholder', 'checkbox', 'goBack', 'dialog', 'siteNav', 'json','text','css'
+// 'baseClient', 'placeholder', 'checkbox', 'goBack', 'dialog', 'siteNav',
+// 'json','text','css'
 const commonJS = ['domReady'];
-
 
 function getConfig(env) {
     const DIST = (env == 'production')
@@ -336,6 +336,7 @@ function getConfig(env) {
                         underscore: 'rock/com/underscore/underscore',
                         backbone: 'rock/com/backbone/backbone',
                         bootstrap: 'rock/com/bootstrap/js/bootstrap',
+                        moment: 'rock/com/moment/moment',
                         // lib
                         baseClient: 'rock/js/rock-client',
                         rockBase: 'rock/js/rockbase',
@@ -344,9 +345,23 @@ function getConfig(env) {
                         dialog: 'rock/js/dialog/dialog',
                         checkbox: 'rock/js/checkbox/Checkbox',
                         placeholder: 'rock/js/placeholder/Placeholder',
+                        feedback: 'rock/js/feedback/feedback',
+                        locationSelect: 'usedCar/locationSelect',
+                        location: 'rock/js/location/Location',
                         goBack: 'rock/js/goBack/goBack',
-                        common: 'rock/common'
+                        user: 'login/user',
+                        cartMenu: 'cartMenu/nav-cart',
+                        common: 'rock/common',
+                        District: 'rock/js/location/District',
+                        videoJs: 'rock/com/jquery-videojs/video',
+                        datepicker:'rock/com/datetimepicker/bootstrap-datetimepicker.min',
                         // jquery_plugin
+                        pngfix: 'rock/com/jquery-pngFix/pngFix',
+                        flexslider: 'rock/com/jquery-FlexSlider/jquery.flexslider.min',
+                        pagination: 'rock/com/jquery-pagination/js/pagination',
+                        raty: 'rock/com/jquery-raty/jquery.raty',
+                        lazyload: 'rock/com/jquery-lazyload/jquery.lazyload.min',
+                        imgReload: 'rock/js/imgReload/imgReload'
                     },
                     waitSeconds: 0,
                     shim: {
@@ -365,7 +380,13 @@ function getConfig(env) {
                         },
                         rockBase: {
                             deps: ['backbone']
-                        }
+                        },
+                        pngfix: ['jquery'],
+                        flexslider: ['jquery'],
+                        pagination: ['jquery'],
+                        imgReload: ['jquery'],
+                        raty: ['jquery'],
+                        lazyload: ['jquery']
                     },
                     modules: [
                         {
@@ -373,20 +394,134 @@ function getConfig(env) {
                             include: commonJS,
                             exclude: libJS
                         }, {
-                            name: 'home/index',
-                            include: [],
-                            exclude: libJS
-                                .concat(commonJS)
-                                .concat(['common'])
-                        }, {
                             name: 'cars/index',
                             include: [],
                             exclude: libJS
                                 .concat(commonJS)
                                 .concat(['common'])
                         }, {
-                            name: 'cacf/index',
-                            include: ['cacf/backbone-main'],
+                            name: 'comment/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'coupon/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'dealer/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'diys/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'finance/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'help/help',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'home/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'news/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'partsList/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'shop/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'testDrive/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'usedCar/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'usedCarShop/index',
+                            include: [],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'cacf/backbone-main',
+                            include: [
+                                'cacf/backbone-main', 'cacf/index'
+                            ],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'car/backbone-main',
+                            include: [
+                                'car/backbone-main', 'car/index'
+                            ],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'cart/backbone-main',
+                            include: [
+                                'cart/backbone-main', 'cart/index'
+                            ],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'confirmOrder/backbone-main',
+                            include: [
+                                'confirmOrder/backbone-main', 'confirmOrder/index'
+                            ],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'diy/backbone-main',
+                            include: [
+                                'diy/backbone-main', 'diy/index'
+                            ],
+                            exclude: libJS
+                                .concat(commonJS)
+                                .concat(['common'])
+                        }, {
+                            name: 'parts/backbone-main',
+                            include: [
+                                'parts/backbone-main', 'parts/index'
+                            ],
                             exclude: libJS
                                 .concat(commonJS)
                                 .concat(['common'])
@@ -395,6 +530,8 @@ function getConfig(env) {
                     optimize: "none",
                     optimizeCss: 'standard',
                     removeCombined: true,
+                    findNestedDependencies: true,
+                    inlineText: true,
                     //generateSourceMaps: true,
                     uglify2: {
                         output: {

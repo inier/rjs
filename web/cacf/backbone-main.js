@@ -44,7 +44,7 @@ require.config({
 });
 
 require([
-    'jquery', 'common', 'cacf/backbone-router','cacf/indexs'
+    'jquery', 'common', 'cacf/backbone-router'
 ], function ($, domReady, Router) {
     //console.log("Dom Is Ready! Do Something Init!");
     window.rock_router = new Router();

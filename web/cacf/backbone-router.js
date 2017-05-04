@@ -1,7 +1,7 @@
 /**
  * Created by KirK-Jiang on 2015/4/14.
  */
-define(['jquery', 'backbone'], function($, Backbone) {
+define(['jquery', 'backbone'], function($, Backbone, indexs) {
     var mainView = {};
     return Backbone.Router.extend({
         routes: {
@@ -26,7 +26,7 @@ define(['jquery', 'backbone'], function($, Backbone) {
         home:function(){
             var router = this;
             //console.log("first view:   "+baseClient.firstModule);
-            require(['cacf/indexs'],function(homeView){
+            require(['cacf/index'],function(homeView){
                 router.changePage(new homeView());
 
             });

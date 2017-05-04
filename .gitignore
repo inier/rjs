@@ -47,5 +47,6 @@ www-built/
 *-built/
 *.zip
 webx/
+beta/
 .git/
 .idea/

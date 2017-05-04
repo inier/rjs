@@ -31,7 +31,7 @@ define([
         'text!rock/js/dialog/dialog.html',
         'bootstrap'
     ],
-    function ($, _) {
+    function ($, _, Tpl) {
         function dialog(options) {
             var me = this;
 
