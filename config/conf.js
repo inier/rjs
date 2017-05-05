@@ -354,7 +354,7 @@ function getConfig(env) {
                         common: 'rock/common',
                         District: 'rock/js/location/District',
                         videoJs: 'rock/com/jquery-videojs/video',
-                        datepicker:'rock/com/datetimepicker/bootstrap-datetimepicker.min',
+                        datepicker: 'rock/com/datetimepicker/bootstrap-datetimepicker.min',
                         // jquery_plugin
                         pngfix: 'rock/com/jquery-pngFix/pngFix',
                         flexslider: 'rock/com/jquery-FlexSlider/jquery.flexslider.min',
@@ -487,16 +487,14 @@ function getConfig(env) {
                                 .concat(['common'])
                         }, {
                             name: 'car/backbone-main',
-                            include: [
-                                'car/backbone-main', 'car/index'
-                            ],
+                            include: ['car/index'],
                             exclude: libJS
                                 .concat(commonJS)
                                 .concat(['common'])
                         }, {
                             name: 'cart/backbone-main',
                             include: [
-                                'cart/backbone-main', 'cart/index'
+                                'cart/index'
                             ],
                             exclude: libJS
                                 .concat(commonJS)
@@ -504,23 +502,21 @@ function getConfig(env) {
                         }, {
                             name: 'confirmOrder/backbone-main',
                             include: [
-                                'confirmOrder/backbone-main', 'confirmOrder/index'
+                                'confirmOrder/index'
                             ],
                             exclude: libJS
                                 .concat(commonJS)
                                 .concat(['common'])
                         }, {
                             name: 'diy/backbone-main',
-                            include: [
-                                'diy/backbone-main', 'diy/index'
-                            ],
+                            include: ['diy/index'],
                             exclude: libJS
                                 .concat(commonJS)
                                 .concat(['common'])
                         }, {
                             name: 'parts/backbone-main',
                             include: [
-                                'parts/backbone-main', 'parts/index'
+                                'parts/index'
                             ],
                             exclude: libJS
                                 .concat(commonJS)
