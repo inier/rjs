@@ -1,0 +1,1 @@
+node ../tools/r.js -o tool-builder/builder.js
