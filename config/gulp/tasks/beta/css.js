@@ -9,7 +9,8 @@ var scss = require('gulp-scss'), //scss
     plumber = require('gulp-plumber'),
     concat = require('gulp-concat'), //合并文件
     autoPreFixer = require('gulp-autoprefixer'),
-    changed = require('gulp-changed');
+    changed = require('gulp-changed'),
+    watch = require('gulp-watch');
 
 // development or production
 var config = require('../../../conf')('development').assets.style;
@@ -18,6 +19,17 @@ var config = require('../../../conf')('development').assets.style;
 gulp.task('sass', function () {
     return gulp.src(config.src.scss) //scss源文件
         .pipe(changed(config.dist))
+        .pipe(sourcemaps.init())
+        .pipe(plumber({errorHandler: handleErrors})) //错误提示
+        .pipe(autoPreFixer(config.autoprefixer))
+        .pipe(scss(config.mode.expanded)) //执行编译
+        .pipe(gulp.dest(config.dist)); //输出目录
+});
+
+//task: watch scss
+gulp.task('sass:watch', function () {
+    return gulp.src(config.src.scss) //scss源文件
+        .pipe(watch(config.src.scss))
         .pipe(sourcemaps.init())
         .pipe(plumber({errorHandler: handleErrors})) //错误提示
         .pipe(autoPreFixer(config.autoprefixer))
