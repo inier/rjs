@@ -3,7 +3,7 @@
  */
 
 // 是否启动JS优化
-const isOptimised = false;
+const isOptimised = true;
 // js优化等级[ 0 , 1, 2 ]  1: 提取公共文件到common.js   2：所有合并到一个文件
 const jsOptimisedLevel = "1";
 
@@ -105,7 +105,7 @@ function getConfig(cfg) {
                     locationSelect: 'usedCar/locationSelect',
                     District: 'rock/js/location/District',
                     // site other
-                    bounce: 'bounce/bounce',
+                    bounces: 'bounce/bounce',
                     recommend: 'recommends/index'
                 },
                 waitSeconds: 0,

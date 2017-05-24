@@ -10,7 +10,6 @@ var replace = require('gulp-batch-replace');
 var cfgs = require('../../../conf')('development');
 var config = cfgs.optimize.rjs;
 
-console.log(config);
 var replacement = 'rock/common';
 var replaceArr = [
     [
@@ -67,10 +66,10 @@ gulp.task('JS-COMBO', function (cb) {
             cb();
         }, cb);
 
-    return gulp
-        .src([`${config.js.dir}/**/index.js`])
-        .pipe(replace(replaceArr))
-        .pipe(gulp.dest(config.js.dir));
+    // return gulp
+    //     .src([`${config.js.dir}/**/index.js`])
+    //     .pipe(replace(replaceArr))
+    //     .pipe(gulp.dest(config.js.dir));
 });
 
 gulp.task('RJS:REPLACE', function () {
